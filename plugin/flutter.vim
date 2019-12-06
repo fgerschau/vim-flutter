@@ -8,6 +8,10 @@ if !exists('g:flutter_command')
   let g:flutter_command='flutter'
 endif
 
+if !exists('g:flutter_debug_command')
+  let g:flutter_debug_command='flutter pub global run devtools'
+endif
+
 if !exists('g:flutter_hot_reload_on_save')
   let g:flutter_hot_reload_on_save=1
 endif
@@ -31,6 +35,7 @@ command! FlutterHotReload call flutter#hot_reload()
 command! FlutterHotRestart call flutter#hot_restart()
 command! FlutterQuit call flutter#quit()
 command! FlutterVisualDebug call flutter#visual_debug()
+command! FlutterRunDebug call flutter#runDebug()
 
 if g:flutter_hot_reload_on_save
   autocmd! BufWritePost *.dart call flutter#hot_reload_quiet()

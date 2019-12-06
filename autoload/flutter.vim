@@ -138,3 +138,7 @@ function! flutter#run(...) abort
 
   call flutter#start_job(cmd)
 endfunction
+
+function! flutter#runDebug(...) abort
+  let cmd = g:flutter_command.' run '
+endfunction
